@@ -6,6 +6,26 @@
     <title>Index</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/Starter/_module.js"></script>    
+    <script src="app/Starter/controllers/starter-ctrl.js"></script>
+
+
+    <!-- module:login -->
+    <script src="app/login/_module.js"></script>
+    <script src="app/login/controllers/login-ctrl.js"></script>
+    <!-- endmodule:login -->
+
+    <!-- module:services -->
+   <script src="common/services/authentication-service.js"></script>
+    <!-- endmodule:services -->
+
 </head>
 
 <body>
@@ -16,11 +36,6 @@
             <div ng-view></div>
         </p>
     </div>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="app/Starter/_module.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/Starter/controllers/starter-ctrl.js"></script>
 </body>
 
 </html>
