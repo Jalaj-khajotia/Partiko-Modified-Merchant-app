@@ -5,8 +5,8 @@
 	"homepage": "TBD",
 	"private": true,
 	"dependencies": {
-		"angular": "1.2.x",
-		"angular-route": "1.2.x",
+		"angular": "1.2.16",
+		"angular-route": "1.2.16",
 		"bootstrap": "3.1.1"
 	},
 	"appPath": "app"

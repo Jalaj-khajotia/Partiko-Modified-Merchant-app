@@ -20,7 +20,7 @@
 
 
 		
-			 $http.get("modules/Starter/data/user.json")
+			 $http.get("app/Starter/data/user.json")
 				.success(function(data) {
 					$scope.user2 = data;
 					console.log("Success... User2 = " + JSON.stringify(data));

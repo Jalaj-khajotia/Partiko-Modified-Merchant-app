@@ -8,7 +8,7 @@ angular.module('StarterApp', [
   'Starter'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/Starter', {templateUrl: 'modules/Starter/views/starter.html', controller: 'StarterCtrl'});
+  $routeProvider.when('/Starter', {templateUrl: 'app/Starter/views/starter.html', controller: 'StarterCtrl'});
   //$routeProvider.when('/call/:CallId', {templateUrl: 'calls/views/call.html', controller: 'CallsCtrl'});
   //$routeProvider.when('/addTask', {templateUrl: 'partials/addTask.html', controller: 'CallsCtrl'});
   //$routeProvider.when('/editCall', {templateUrl: 'partials/editCall.html', controller: 'CallsCtrl'});
