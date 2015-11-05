@@ -1,0 +1,13 @@
+{
+	"name": "StarterTemplate",
+	"description": "StarterTemplate",
+	"version": "0.0.1",
+	"homepage": "TBD",
+	"private": true,
+	"dependencies": {
+		"angular": "1.2.x",
+		"angular-route": "1.2.x",
+		"bootstrap": "3.1.1"
+	},
+	"appPath": "app"
+}
