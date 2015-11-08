@@ -23,6 +23,7 @@
             AuthenticationService.Logout();
         }
         $scope.Logout();
+        $scope.loginPage = true;
     }
     module.controller('LoginCtrl', ['$scope', '$window', '$http', 'AuthenticationService', controller]);
 

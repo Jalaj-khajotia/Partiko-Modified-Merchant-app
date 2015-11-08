@@ -1,0 +1,99 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse" style="margin-top: 8px;">
+        <ul class="nav in" id="side-menu">
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.addEvents"><i class="fa fa-group fa-fw"></i>Add Event<span></span></a>
+            </li>
+            <li ng-class="{active: collapseVar==1}">
+                {{dropDown}}
+                <a href="" ng-click="check(1)">
+                    <i class="fa fa-th fa-fw"></i>My Event<span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                    <li ng-hide="collapseVar === 1">
+                        <a ui-sref="dashboard.events({type: 'latest'})">Lastest Events</a>
+                    </li>
+                    <li ng-hide="collapseVar === 1">
+                        <a ui-sref="dashboard.events({type: 'past'})">Past Events</a>
+                    </li>
+                    <li ng-hide="collapseVar === 1" style="margin-bottom: 10px;">
+                        <div class="input-group m-bot15" style="margin-left:20px;width:200px;">
+                            <span class="input-group-addon btn-default">
+                               <a ui-sref="dashboard.eventsearch({search: keyword})" style="padding: 0px;"> <i class="fa fa-search"></i></a>
+                            </span>
+                            <input type="text" class="form-control" ng-keypress="handle($event)" ng-model="keyword" placeholder="Search Event">
+                        </div>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.social"><i class="fa fa-tasks fa-fw"></i>Social Integration<span></span></a>
+            </li>
+            <li ui-sref-active="active" ng-hide="disable">
+                <a ui-sref="#"><i class="fa fa-eye fa-fw"></i>Events Analytics<span></span></a>
+            </li>
+            <li ng-class="{active: collapseVar==2}" ng-hide="disable">
+                {{dropDown}}
+                <a href="" ng-click="check(2)">
+                    <i class="fa fa-th fa-fw"></i>Merchants<span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=2">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.merchant">Approval Requests</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.merchant">Existing Merchants</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <div class="input-group m-bot15" style="margin-left:20px;width:200px;">
+                            <span class="input-group-addon btn-default">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Search Merchant">
+                        </div>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li ng-class="{active: collapseVar==3}" ng-hide="disable">
+                {{dropDown}}
+                <a href="" ng-click="check(3)">
+                    <i class="fa fa-user-md fa-fw"></i>Campus Ambassadors<span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=3">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.ambassadors">Campus Ambassadors</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.ambassadors">Campus Ambassadors Request</a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-class="{active: collapseVar==4}" ng-hide="disable">
+                {{dropDown}}
+                <a href="" ng-click="check(4)">
+                    <i class="fa fa-tasks fa-fw"></i>Web Pages<span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=4">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.AboutUs">About Us</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.BrandManagers">Brand Managers</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.Clients">Clients</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.Media">Media</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

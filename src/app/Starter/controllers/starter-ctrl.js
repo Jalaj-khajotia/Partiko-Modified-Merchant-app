@@ -4,7 +4,7 @@
 	var module = angular.module('Starter', []);
 
 	function controller($scope, $http) {
-
+			$scope.loginPage =true;
 		var model = {
 			"AccountName": "Spectrum-Health\\sha18306",
 			"FirstName": "Neil",

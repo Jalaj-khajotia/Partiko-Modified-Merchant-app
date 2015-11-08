@@ -3,7 +3,7 @@
 	"use strict";
 
 	// Declare app level module which depends on filters, and services
-	var app = angular.module('StarterApp', ['ngRoute', 'login', 'Starter', 'services']);
+	var app = angular.module('StarterApp', ['ngRoute', 'login', 'Starter', 'services','directives','event']);
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/Starter', {
 				templateUrl: 'app/Starter/views/starter.html',
@@ -12,14 +12,37 @@
 			.when('/login', {
 				templateUrl: 'app/login/views/login.html',
 				controller: 'LoginCtrl'
+			})
+			.when('/dashboard', {
+				templateUrl: 'app/Starter/views/starter.html',
+				controller: ''
+			})
+			.when('/add-event', {
+				templateUrl: 'app/event/views/add-event.html',
+				controller: 'add-eventCtrl'
+			})
+			.when('/e/:type/:key', {
+				templateUrl: 'app/event/views/event-detail.html',
+				controller: 'event-detailCtrl'
+			})
+			.when('/events?type', {
+				templateUrl: 'app/event/views/display-events.html',
+				controller: 'display-eventCtrl'
+			})
+			.when('/searchResult?search', {
+				templateUrl: 'app/event/views/display-events.html',
+				controller: 'display-eventCtrl'
+			})
+			.when('/edit-event?key', {
+				templateUrl: 'app/event/views/add-event.html',
+				controller: 'edit-eventCtrl'
+			})
+			.when('/404-error', {
+				templateUrl: 'app/404-error/views/404.html',
+				controller: ''
 			});
-		//$routeProvider.when('/call/:CallId', {templateUrl: 'calls/views/call.html', controller: 'CallsCtrl'});
-		//$routeProvider.when('/addTask', {templateUrl: 'partials/addTask.html', controller: 'CallsCtrl'});
-		//$routeProvider.when('/editCall', {templateUrl: 'partials/editCall.html', controller: 'CallsCtrl'});
-		//$routeProvider.when('/addNote', {templateUrl: 'partials/addNote.html', controller: 'CallsCtrl'});
-		//$routeProvider.when('/login', {templateUrl: 'login/views/login.html', controller: 'LoginCtrl'});
 		$routeProvider.otherwise({
-			redirectTo: '/Starter'
+			redirectTo: '/404-error'
 		});
 	}]);
 })();

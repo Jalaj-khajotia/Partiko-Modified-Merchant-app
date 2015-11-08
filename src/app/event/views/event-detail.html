@@ -1,0 +1,76 @@
+<div class="theme-showcase" style="margin: 15px;">
+    <!--   <div class="clearfix">
+      <a href="" class="btn btn-success btn-lg" style="font-size: 14px;">
+          <span class="glyphicon glyphicon-backward"></span> Go Back
+      </a>
+  </div> -->
+    <div class="col-sm-12" style="margin-top:5px;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4> <span style= "margin-right: 10px;"class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>{{ currentEvent.name }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="jumbotron" style="margin:auto; border-radius: 5px;">
+            <div class="wrapper">
+            <img class="img-responsive" style="display: inline; height: 300px;" ng-src="{{currentEvent.cover}}" ng-if="!showFallBackImg" />
+            <img class="img-responsive" style="height: 300px; display: inline ;" ng-if="showFallBackImg" src="../images/weather_image.jpg" />
+        </div>
+        </div>
+    </div>
+    <div class="row" style="padding-right: 10px;">
+        <div class="col-sm-7" style="margin-top:20px;">          
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="__date" style="display:block;padding-left: 8px;">
+                        <span>
+                           {{timeInAmPmFormat}} <br>{{monthDate}} <br>{{year}} </span>
+                    </div>
+                </div>
+                <div class="col-sm-10" style="padding-left:0;">
+                    <div class="name">
+                        <h4 title="Spaces Tickets" style="margin:0 20px;">@ {{currentEvent.place}}</h4>
+                       
+                        <div class="tags" style=" margin: 10px 0;">
+                            <span ng-repeat="tag in currentEvent.tags">{{tag}}</span>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  <div style="height: 400px; width:200px">
+                <div id="map"></div>
+                
+            </div> -->
+            <div id="exTab1" class="container" style="margin: 20px 0;">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a data-target="#1a" data-toggle="tab">Contact</a>
+                    </li>
+                    <li><a data-target="#2a" data-toggle="tab">Category</a>
+                    </li>
+                    <li><a data-target="#3a" data-toggle="tab">Get Tickets</a>
+                    </li>                   
+                </ul>
+                <div class="tab-content clearfix" style= "height: 110px;">
+                    <div class="tab-pane active" id="1a">
+                         <h4>Phone1: {{currentEvent.phone1}}</h4>
+                         <h4>Phone2: {{currentEvent.phone2}}</h4>
+                         <h4>Email: {{currentEvent.email}} </h4>
+                    </div>
+                    <div class="tab-pane" id="2a">
+                     <h4>{{currentEvent.category}}</h4>
+                    </div>
+                    <div class="tab-pane" id="3a">
+                        <h4>{{currentEvent.ticket_uri}}</h4>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron col-sm-5" style="padding:5px 10px; margin: 15px 0;">
+            <h3 style="color: #b1302a;">Description: </h3>
+            <div>{{ currentEvent.description }}</div>
+        </div>
+    </div>
+</div>
