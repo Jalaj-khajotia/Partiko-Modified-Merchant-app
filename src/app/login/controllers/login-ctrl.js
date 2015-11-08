@@ -17,6 +17,7 @@
             var username = loginObj.username;
             var pass = loginObj.password;
             AuthenticationService.Login(username, pass);
+            console.log('loggin in');
         };
 
         $scope.Logout = function() {

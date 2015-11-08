@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var module = angular.module('services',[]);
+  var module = angular.module('services');
 
   function service($http, $window, $rootScope) {
 
@@ -19,7 +19,7 @@
           $scope.data = response.data;*/
           // console.log( response.status);
           if (response.data.status) {
-            $window.location.href = "/#/dashboard/home";
+            $window.location.href = "/#/dashboard";
             sessionStorage.setItem('token', response.data.token);
             //sessionStorage.setItem('token', 'eyJrZXkiOiIwYmFkZDZlNmIyNjA2MzI3In0.CPxCdA.DnlMGuZdsDzSRupCHe9KY17M9LE');
           } else {}

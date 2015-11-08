@@ -141,6 +141,6 @@
     }
 
   }
-  module.controller('DashCtrl', ['$scope', '$window', 'EventsService', 'AuthenticationService', '$rootScope', controller]);
+  module.controller('dashCtrl', ['$scope', '$window', 'EventsService', 'AuthenticationService', '$rootScope', controller]);
 
 })();

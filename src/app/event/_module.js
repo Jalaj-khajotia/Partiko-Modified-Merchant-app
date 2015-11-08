@@ -1,1 +1,1 @@
-angular.module('event',['services']);
+angular.module('event',['services','ui.bootstrap.datetimepicker','toastr','ngDialog']);

@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" href="common/styles/index.css">
     <link rel="stylesheet" type="text/css" href="bower_components/metisMenu/dist/metisMenu.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+     <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href='bower_components/angular-toastr/dist/angular-toastr.css'>
+    <link rel="stylesheet" type="text/css" href='bower_components/SpinKit/css/spinkit.css'>
+    <link rel="stylesheet" type="text/css" href="bower_components/SpinKit/css/spinners/11-folding-cube.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog.css">
+
     <!-- endbuild -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -20,7 +28,12 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-toggle-switch/angular-toggle-switch.min.js"></script>
     <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
-
+    <script src='bower_components/angular-moment/angular-moment.js'></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src='bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js'></script>
+    <script src='bower_components/ng-dialog/js/ngDialog.js'></script>
+    <script src='bower_components/angular-toastr/dist/angular-toastr.tpls.js'></script> 
 
     <!-- endbower -->
     <!-- endbuild -->
@@ -49,11 +62,12 @@
     <!-- endmodule:login -->
 
     <!-- module:event -->
-     <script src="app/event/_module.js"></script>
+    <script src="app/event/_module.js"></script>
     <script src="app/event/controllers/add-event-ctrl.js"></script>
     <script src="app/event/controllers/display-event-ctrl.js"></script>
     <script src="app/event/controllers/edit-event-ctrl.js"></script>
     <script src="app/event/controllers/event-detail-ctrl.js"></script>
+    <script src="app/event/controllers/dialog-ctrl.js"></script>
     <!-- endmodule:event -->   
 
      <script src="app/app.js"></script>
@@ -63,8 +77,8 @@
 </head>
 
 <body>
-   <div id="wrapper" >
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" >
+   <div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="navbar-header">        
         <a class="navbar-brand" href="#/dashboard/home"><img id="logo-Dashboard" src="app/layout/images/campus-partiko.png"></a>
     </div>

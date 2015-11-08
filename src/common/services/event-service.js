@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var module = angular.module('services',[]);
+  var module = angular.module('services');
 
   function service($http, $window, $rootScope) {
    
@@ -23,7 +23,6 @@
           return error;
           // not relevant
         });
-
     };
 
     this.DeleteEvent = function(eventkey) {
