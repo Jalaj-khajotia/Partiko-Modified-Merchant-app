@@ -20,6 +20,7 @@
           // console.log( response.status);
           if (response.data.status) {
             $window.location.href = "/#/dashboard";
+            $rootScope.hideMenu = false; 
             sessionStorage.setItem('token', response.data.token);
             //sessionStorage.setItem('token', 'eyJrZXkiOiIwYmFkZDZlNmIyNjA2MzI3In0.CPxCdA.DnlMGuZdsDzSRupCHe9KY17M9LE');
           } else {}

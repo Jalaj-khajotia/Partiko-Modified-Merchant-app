@@ -23,11 +23,12 @@
       }
 
       function _initilize() {
-        // AuthenticationService.CheckForLoggedin();
+        AuthenticationService.CheckForLoggedin();
         $scope.eventsList = {};
         $rootScope.filteredEvents = {};
         $scope.dialogShown = true;
         $scope.hideSearchBar = true;
+        $rootScope.hideMenu = false; 
         keyword = $routeParams.search;
         LoadDateTimeFunction();
 

@@ -3,7 +3,7 @@
 	'use strict';
 	var module = angular.module('event');
 
-	function controller($scope, $window, AuthenticationService) {
+	function controller($scope, $window, $rootScope, AuthenticationService) {
 
 		$scope.LoadEvent = function(event) {
 				var event = sessionStorage.getItem('currentEvent');
@@ -57,9 +57,15 @@
 			var pattern = new RegExp("0?" + hh + ":" + m + ":" + s);
 			return date.replace(pattern, h + ":" + m + ":" + s + " " + dd)
 		}
-		//AuthenticationService.CheckForLoggedin();
+
+		function _initilize(){
+		$rootScope.hideMenu = true; 
+		AuthenticationService.CheckForLoggedin();
 		$scope.LoadEvent();
+		}
+
+		_initilize();
 	}
-	module.controller('event-detailCtrl', ['$scope', '$window', 'AuthenticationService', controller]);
+	module.controller('event-detailCtrl', ['$scope', '$window', '$rootScope','AuthenticationService', controller]);
 
 })();

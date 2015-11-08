@@ -10,7 +10,7 @@
      */
     var module = angular.module('login');
 
-    function controller($scope, $window, $http, AuthenticationService) {
+    function controller($scope, $window, $http, $rootScope, AuthenticationService) {
 
         $scope.Login = function(loginObj) {
 
@@ -24,8 +24,8 @@
             AuthenticationService.Logout();
         }
         $scope.Logout();
-        $scope.loginPage = true;
+        $rootScope.hideMenu = true;       
     }
-    module.controller('LoginCtrl', ['$scope', '$window', '$http', 'AuthenticationService', controller]);
+    module.controller('LoginCtrl', ['$scope', '$window', '$http','$rootScope', 'AuthenticationService', controller]);
 
 })();

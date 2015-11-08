@@ -12,10 +12,13 @@
 				function(AuthenticationService, $scope, $rootScope) {
 					function LoadMerchantProfile() {
 						AuthenticationService.GetProfile().then(function(response) {
-							$scope.merchantName = response.data.data.name;
-							console.log($rootScope.name);
-							sessionStorage.setItem('merchantProfile', JSON.stringify(response.data.data));
-							$scope.profile = response.data;
+							//if (response.data.data != null && response.data.data != undefined && response.data.data != 'undefined')
+							 {
+								$scope.merchantName = response.data.data.name;
+								console.log($rootScope.name);
+								sessionStorage.setItem('merchantProfile', JSON.stringify(response.data.data));
+								$scope.profile = response.data;
+							}
 						}, function() {
 
 						})

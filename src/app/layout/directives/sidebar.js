@@ -22,8 +22,12 @@
 
         $scope.handle = function(keyEvent) {
           if (keyEvent.which === 13) {
-            $window.location.href = '/#/dashboard/searchResult?search=' + $scope.keyword;
+             $scope.search();
           }
+        }
+
+        $scope.search = function(){
+          $window.location.href = '/#/searchResult?search=' + $scope.keyword;
         }
 
         $scope.multiCheck = function(y) {

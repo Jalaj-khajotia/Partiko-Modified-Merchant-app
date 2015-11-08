@@ -29,7 +29,7 @@
 				templateUrl: 'app/event/views/display-events.html',
 				controller: 'display-eventCtrl'
 			})
-			.when('/searchResult?search', {
+			.when('/searchResult', {
 				templateUrl: 'app/event/views/display-events.html',
 				controller: 'display-eventCtrl'
 			})
@@ -41,8 +41,8 @@
 				templateUrl: 'app/404-error/views/404.html',
 				controller: ''
 			});
-		/*$routeProvider.otherwise({
+		$routeProvider.otherwise({
 			redirectTo: '/404-error'
-		});*/
+		});
 	}]);
 })();

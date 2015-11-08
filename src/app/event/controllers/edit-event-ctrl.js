@@ -3,7 +3,7 @@
 	'use strict';
 	var module = angular.module('event');
 
-	function controller($scope, $window, $http, AuthenticationService, toastr, EventsService) {
+	function controller($scope, $window, $http, $rootScope, AuthenticationService, toastr, EventsService) {
 
     
 
@@ -146,13 +146,14 @@
         LoadEvent();
         $scope.Heading = "Edit your event";
         $scope.newImageUploaded = false;
-        $scope.timeEdited = false;
+        $scope.timeEdited = false;    
+        AuthenticationService.CheckForLoggedin();   
       }
 
       _initilize();
     }
 
-	module.controller('edit-eventCtrl', ['$scope', '$window', '$http', 'AuthenticationService', 'toastr',
+	module.controller('edit-eventCtrl', ['$scope', '$window', '$http', '$rootScope', 'AuthenticationService', 'toastr',
     'EventsService',controller]);
 
 })();
