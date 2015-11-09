@@ -44,21 +44,6 @@ module.exports = function(grunt) {
 					'<%= yeoman.app %>/common/services/*.js'
 				]
 			},
-			csscommon: {
-				dest: '.temp/concat/vendor.css',
-				src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-						'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-						'bower_components/metisMenu/dist/metisMenu.min.css',
-						'bower_components/font-awesome/css/font-awesome.min.css',
-						'bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
-						'bower_components/angular-toastr/dist/angular-toastr.css',
-						'bower_components/SpinKit/css/spinners/11-folding-cube.css',
-						'bower_components/ng-dialog/css/ngDialog-theme-default.css',
-						'bower_components/ng-dialog/css/ngDialog-theme-plain.css',
-						'bower_components/ng-dialog/css/ngDialog.css',
-						'bower_components/angular-loading-bar/build/loading-bar.css'						
-				]
-			},
 			cssmain: {
 				dest: '.temp/concat/main.css',
 				src: [  'src/app/layout/styles/layout.css',
@@ -277,6 +262,23 @@ module.exports = function(grunt) {
 				src: '*.css',
 				dest: '<%= yeoman.dist %>/styles',
 				cwd: '.temp/concat'
+			},
+			vendorStyles:{
+				expand: true,
+				src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
+						'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+						'bower_components/metisMenu/dist/metisMenu.min.css',
+						'bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
+						'bower_components/angular-toastr/dist/angular-toastr.css',
+						'bower_components/SpinKit/css/spinners/11-folding-cube.css',
+						'bower_components/ng-dialog/css/ngDialog-theme-default.css',
+						'bower_components/ng-dialog/css/ngDialog-theme-plain.css',
+						'bower_components/SpinKit/css/spinkit.css',
+						'bower_components/ng-dialog/css/ngDialog.css',
+						'bower_components/angular-loading-bar/build/loading-bar.css',
+						'bower_components/font-awesome/{,*/}*/*.*',],
+				dest: '<%= yeoman.dist %>',
+				cwd: ''
 			}
 		}
 
@@ -294,6 +296,7 @@ module.exports = function(grunt) {
 	// 'clean:temp', 'clean:dist', 'copy:dist','copy:styles',
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'connect:livereload', 'watch']);
+	grunt.registerTask('serve', ['jshint', 'connect:livereload', 'watch']);
 
 	grunt.registerTask('build', [
 		'clean:dist',
@@ -304,7 +307,8 @@ module.exports = function(grunt) {
 		'uglify',
 		'usemin',
 		'htmlmin',
-		'copy:styles'
+		'copy:styles',
+		'copy:vendorStyles'
 	]);
 
 };
