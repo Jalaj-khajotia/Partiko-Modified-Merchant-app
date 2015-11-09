@@ -12,7 +12,7 @@
 				function(AuthenticationService, $scope, $rootScope) {
 					function LoadMerchantProfile() {
 						AuthenticationService.GetProfile().then(function(response) {
-							//if (response.data.data != null && response.data.data != undefined && response.data.data != 'undefined')
+							if (response.data.data != null && response.data.data != undefined && response.data.data != 'undefined')
 							 {
 								$scope.merchantName = response.data.data.name;
 								console.log($rootScope.name);
@@ -28,10 +28,12 @@
 						var isUserLoggedin = sessionStorage.getItem('LoggedIn');
 						if (isUserLoggedin === "true") {
 							var merchantProfile = sessionStorage.getItem('merchantProfile');
+							console.log('reteriving local stroage');
 							$scope.merchantName = JSON.parse(merchantProfile).name;
-						} else {
-							sessionStorage.setItem('LoggedIn', 'true');
+						} else {							
+							console.log('setting local stroage');
 							LoadMerchantProfile();
+							sessionStorage.setItem('LoggedIn', 'true');
 						}
 						console.log($scope.merchantName);
 

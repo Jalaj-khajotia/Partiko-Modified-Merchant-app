@@ -3,7 +3,7 @@
 	"use strict";
 
 	// Declare app level module which depends on filters, and services
-	var app = angular.module('StarterApp', ['ngRoute', 'login', 'Starter', 'services','directives','event','dashboard']);
+	var app = angular.module('StarterApp', ['ngRoute', 'login', 'services','directives','event','dashboard','404error']);
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/Starter', {
 				templateUrl: 'app/Starter/views/starter.html',
@@ -39,7 +39,7 @@
 			})
 			.when('/404-error', {
 				templateUrl: 'app/404-error/views/404.html',
-				controller: ''
+				controller: '404Ctrl'
 			});
 		$routeProvider.otherwise({
 			redirectTo: '/404-error'

@@ -55,8 +55,7 @@
       epoch = moment(today.today() + " " + today.timeNow(), "D/M/YYYY H:mm").unix();
 
       angular.forEach($scope.eventsList, function(event) {
-        if (Type === 'past') {
-          console.log("evluating past");
+        if (Type === 'past') {         
           $scope.Heading = "All Past Events: before " + today.today() + " " + today.timeNow();
           if (parseInt(event.start_time) < epoch) {
             var GMTTime = moment.unix(event.start_time);
@@ -66,8 +65,7 @@
             }).format('ll HH:mm');
             pastEvents.push(event);
           }
-        } else {
-          console.log("evluating latest");
+        } else {         
           $scope.Heading = "All Latest Events: after " + today.today() + " " + today.timeNow();
           if (parseInt(event.start_time) >= epoch) {
             var GMTTime = moment.unix(event.start_time).format('ll HH:mm');
@@ -84,7 +82,7 @@
     $scope.ShowEventDetails = function(event) {
       var stringevent = JSON.stringify(event);
       sessionStorage.setItem('currentEvent', stringevent);
-      $window.location.href = '#/e/dash' + '/' + event.key;
+        $window.location.href = '#/e' + '?key=' + event.key;
     }
 
     function LoadEventfromEventService() {
@@ -119,8 +117,7 @@
 
     function LoadMerchantProfile() {
       AuthenticationService.GetProfile().then(function(response) {
-        $rootScope.name = response.data.data.name;
-        console.log($rootScope.name);
+        $rootScope.name = response.data.data.name;      
         $scope.profile = response.data;
       }, function() {
 
@@ -131,14 +128,12 @@
       AuthenticationService.CheckForLoggedin();
       today = new Date();
       LoadDateTimeFunction();
-      LoadMerchantProfile();
+     // LoadMerchantProfile();
       LoadEvents();
       DisplayEvents();
+    $rootScope.hideMenu = false; 
     }
-    _initilize();
-    $scope.LogOut = function() {
-      console.log("i am getting called");
-    }
+    _initilize();    
 
   }
   module.controller('dashCtrl', ['$scope', '$window', 'EventsService', 'AuthenticationService', '$rootScope', controller]);

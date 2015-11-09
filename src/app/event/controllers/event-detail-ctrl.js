@@ -62,6 +62,7 @@
 		$rootScope.hideMenu = true; 
 		AuthenticationService.CheckForLoggedin();
 		$scope.LoadEvent();
+		document.body.scrollTop = 0;
 		}
 
 		_initilize();

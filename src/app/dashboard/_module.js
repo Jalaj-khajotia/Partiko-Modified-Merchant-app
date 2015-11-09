@@ -1,1 +1,1 @@
-angular.module('dashboard',['services']);
+angular.module('dashboard',['services','angular-loading-bar']);

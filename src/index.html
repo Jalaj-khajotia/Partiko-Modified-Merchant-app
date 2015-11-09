@@ -4,29 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <!-- build:css(.tmp) styles/main.css -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="app/layout/styles/layout.css">
-    <link rel="stylesheet" type="text/css" href="app/login/styles/login.css">
-    <link rel="stylesheet" type="text/css" href="common/styles/index.css">
-     <link rel="stylesheet" type="text/css" href="app/dashboard/styles/dash.css">
     <link rel="stylesheet" type="text/css" href="bower_components/metisMenu/dist/metisMenu.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
-     <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css">
     <link rel="stylesheet" type="text/css" href='bower_components/angular-toastr/dist/angular-toastr.css'>
-    <link rel="stylesheet" type="text/css" href='bower_components/SpinKit/css/spinkit.css'>
     <link rel="stylesheet" type="text/css" href="bower_components/SpinKit/css/spinners/11-folding-cube.css">
     <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
     <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-plain.css">
     <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog.css">
-
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <!-- build:css(.tmp) styles/main.css -->    
+    <link rel="stylesheet" type="text/css" href="app/layout/styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="app/login/styles/login.css">
+    <link rel="stylesheet" type="text/css" href="common/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="app/dashboard/styles/dash.css">
     <!-- endbuild -->
+
+    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+     <script src='bower_components/angular-animate/angular-animate.js'></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-toggle-switch/angular-toggle-switch.min.js"></script>
     <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
@@ -36,6 +38,7 @@
     <script src='bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js'></script>
     <script src='bower_components/ng-dialog/js/ngDialog.js'></script>
     <script src='bower_components/angular-toastr/dist/angular-toastr.tpls.js'></script> 
+
 
     <!-- endbower -->
     <!-- endbuild -->
@@ -59,9 +62,13 @@
      <!-- module:layout -->
     <script src="app/layout/_module.js"></script>
     <script src="app/layout/directives/sidebar.js"></script>
-    <script src="app/layout/directives/header-panel.js"></script>
-  
-    <!-- endmodule:login -->
+    <script src="app/layout/directives/header-panel.js"></script>  
+    <!-- endmodule:layout -->
+
+      <!-- module:404-error -->
+    <script src="app/404-error/_module.js"></script>
+    <script src="app/404-error/controllers/404-ctrl.js"></script>
+    <!-- endmodule:404-error -->
 
     <!-- module:event -->
     <script src="app/event/_module.js"></script>
@@ -72,9 +79,7 @@
     <script src="app/event/controllers/dialog-ctrl.js"></script>
     <!-- endmodule:event -->   
 
-     <script src="app/app.js"></script>
-    <script src="app/Starter/_module.js"></script>
-    <script src="app/Starter/controllers/starter-ctrl.js"></script>
+     <script src="app/app.js"></script>   
     <!-- endbuild -->
 </head>
 
