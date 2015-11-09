@@ -16,20 +16,18 @@
     <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-plain.css">
     <link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog.css">
     <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.css">
-    <!-- build:css(.tmp) styles/main.css -->    
+    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" type="text/css" href="app/layout/styles/layout.css">
     <link rel="stylesheet" type="text/css" href="app/login/styles/login.css">
     <link rel="stylesheet" type="text/css" href="common/styles/index.css">
     <link rel="stylesheet" type="text/css" href="app/dashboard/styles/dash.css">
     <!-- endbuild -->
-
-    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-     <script src='bower_components/angular-animate/angular-animate.js'></script>
+    <script src='bower_components/angular-animate/angular-animate.js'></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-toggle-switch/angular-toggle-switch.min.js"></script>
     <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
@@ -38,39 +36,32 @@
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src='bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js'></script>
     <script src='bower_components/ng-dialog/js/ngDialog.js'></script>
-    <script src='bower_components/angular-toastr/dist/angular-toastr.tpls.js'></script> 
-
-
+    <script src='bower_components/angular-toastr/dist/angular-toastr.tpls.js'></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-
     <!-- module:services -->
-     <script src="common/services/_module.js"></script>    
+    <script src="common/services/_module.js"></script>
     <script src="common/services/event-service.js"></script>
     <script src="common/services/authentication-service.js"></script>
     <!-- endmodule:services -->
-   
     <!-- module:login -->
     <script src="app/login/_module.js"></script>
     <script src="app/login/controllers/login-ctrl.js"></script>
     <!-- endmodule:login -->
-     <!-- module:login -->
+    <!-- module:login -->
     <script src="app/dashboard/_module.js"></script>
     <script src="app/dashboard/controllers/dash-ctrl.js"></script>
     <!-- endmodule:login -->
-
-     <!-- module:layout -->
+    <!-- module:layout -->
     <script src="app/layout/_module.js"></script>
     <script src="app/layout/directives/sidebar.js"></script>
-    <script src="app/layout/directives/header-panel.js"></script>  
+    <script src="app/layout/directives/header-panel.js"></script>
     <!-- endmodule:layout -->
-
-      <!-- module:404-error -->
+    <!-- module:404-error -->
     <script src="app/404-error/_module.js"></script>
     <script src="app/404-error/controllers/404-ctrl.js"></script>
     <!-- endmodule:404-error -->
-
     <!-- module:event -->
     <script src="app/event/_module.js"></script>
     <script src="app/event/controllers/add-event-ctrl.js"></script>
@@ -78,30 +69,34 @@
     <script src="app/event/controllers/edit-event-ctrl.js"></script>
     <script src="app/event/controllers/event-detail-ctrl.js"></script>
     <script src="app/event/controllers/dialog-ctrl.js"></script>
-    <!-- endmodule:event -->   
-
-     <script src="app/app.js"></script>   
+    <!-- endmodule:event -->
+    <script src="app/app.js"></script>
     <!-- endbuild -->
 </head>
 
 <body>
-   <div id="wrapper" ng-hide="hideMenu">
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="navbar-header">        
-        <a class="navbar-brand" href="#/dashboard"><img id="logo-Dashboard" src="app/layout/images/campus-partiko.png"></a>
+    <div id="wrapper" ng-hide="hideMenu">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/dashboard"><img id="logo-Dashboard" src="app/layout/images/campus-partiko.png"></a>
+            </div>
+            <header-panel></header-panel>
+        </nav>
+        <div class="row">
+            <div class="col-md-2">
+                <sidebar></sidebar>
+            </div>
+            <div class="col-md-10" style="padding-left: 60px;" ng-view></div>
+        </div>
+        <!-- Navigation -->
     </div>
-         <header-panel></header-panel>    
-    </nav>
-   
-    <div class="row">
-        <div class="col-md-2">
-            <sidebar></sidebar>
-        </div>        
-             <div class="col-md-10" style="padding-left: 60px;" ng-view></div>        
-    </div>
-    <!-- Navigation -->
-</div>
-<div ng-hide="!hideMenu">
+    <div ng-hide="!hideMenu">
         <div ng-view></div>
     </div>
 </body>
